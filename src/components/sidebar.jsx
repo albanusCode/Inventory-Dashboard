@@ -66,7 +66,7 @@ const Sidebar = ({ togglePartnersTable }) => {
             <div key={i}>
               {menu.name === "Inventory" ? (
                 <div
-                className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md cursor-pointer relative`}
+                className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:text-white hover:bg-gray-800 rounded-md cursor-pointer relative`}
                 onClick={() => setInventoryOpen(!inventoryOpen)}
               >
                 <div>{React.createElement(menu.icon, { size: "20" })}</div>
@@ -77,7 +77,7 @@ const Sidebar = ({ togglePartnersTable }) => {
                 >
                   {menu.name}
                 </h2>
-                <ChevronDown size={16} className="ml-10 text-gray-300" />
+                <ChevronDown size={16} className="ml-10 text-gray-400 font-bold" />
               </div>
               
               ) : (
@@ -87,7 +87,7 @@ const Sidebar = ({ togglePartnersTable }) => {
                   onClick={
                     menu.name === "Partners" ? handlePartnersClick : null
                   }
-                  className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md ${
+                  className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:text-white hover:bg-gray-800 rounded-md ${
                     menu?.margin ? "mt-4" : ""
                   }`}
                   open={open}
