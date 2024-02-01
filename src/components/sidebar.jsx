@@ -48,9 +48,9 @@ const Sidebar = ({ togglePartnersTable }) => {
   return (
     <div className="flex fixed flex-col md:flex-row gap-6 h-[100vh] mt-16">
       <div
-        className={`bg-[#4664fd] overflow-y-scroll min-h-screen ${
+        className={`bg-[#f1f1f1] overflow-y-scroll min-h-screen ${
           open ? "w-60" : "w-16"
-        } duration-500 text-gray-100 px-4 sticky top-0 custom-scrollbar`}
+        } duration-500 text-gray-800 px-4 sticky top-0 custom-scrollbar`}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
