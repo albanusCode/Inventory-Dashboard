@@ -13,7 +13,7 @@ const Navbar = () => {
             </div>
             <div className="ml-auto lg:hidden">
                 <button className="flex items-center">
-                <svg className="text-indigo-500 bg-indigo-100 block h-8 w-8 p-2 rounded" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <svg className="text-gray-800 block h-8 w-8 p-2 rounded" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                     <title>Mobile menu</title>
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                 </svg>
