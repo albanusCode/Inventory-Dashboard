@@ -73,12 +73,21 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-.custom-scrollbar::-webkit-scrollbar {
+
+*::-webkit-scrollbar {
   width: 5px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #720f0f; /* dark blue color */
+*::-webkit-scrollbar-thumb {
+  background-color: #720f0f; 
   border-radius: 10px;
+}
+
+  @media screen and (min-width: 1600px) {
+    .main-container,
+    nav {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+  }
 }
