@@ -104,7 +104,7 @@ const MaterialTable = () => {
   ];
 
   return (
-    <div className="w-full h-screen z-[-1] pl-12 pt-12">
+    <div className="w-full h-screen z-[-1] md:pl-12 pt-12">
         <div className="pb-4 px-6 rounded-md w-full md:w-[95vw] min-w-screen">
             <div className="my-6 flex justify-between items-center bg-gray-800 border p-3 rounded-md">
             <h2 className="flex text-xl font-semibold text-white gap-6">
