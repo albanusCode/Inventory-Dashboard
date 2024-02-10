@@ -13,14 +13,17 @@ import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { BsCashCoin } from "react-icons/bs";
 
-const Sidebar = ({ togglePartnersTable }) => {
+const Sidebar = ({ toggleMaterialTable, toggleHome, isOpen }) => {
   const [open, setOpen] = useState(false);
 
-  const handlePartnersClick = () => {
-    togglePartnersTable();
-  };
+  // const handleMaterialClick = () => {
+  //   toggleMaterialTable();
+  // };
+  // const handleHomeClick = () => {
+  //   toggleHome();
+  // };
 
-  const [inventoryOpen, setInventoryOpen] = useState(false);
+  // const [inventoryOpen, setInventoryOpen] = useState(false);
 
   const menus = [
     { name: "Dashboard", link: "/", icon: MdOutlineDashboard },
@@ -46,31 +49,29 @@ const Sidebar = ({ togglePartnersTable }) => {
   ];
 
   return (
-    <div className="flex fixed flex-col md:flex-row gap-6 h-[100vh] mt-16">
+    <div className={`md:flex fixed flex-col md:flex-row gap-6 h-[100vh] mt-[60px] ${isOpen ? 'md:block' : 'hidden' }`}>
       <div
         className={`bg-[#f1f1f1] overflow-y-scroll min-h-screen ${
           open ? "w-60" : "w-16"
         } duration-500 text-gray-800 px-4 sticky top-0 custom-scrollbar`}
         onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}>
-        {/* {open && (
-          <ChevronsRight
-            size={26}
-            className="cursor-pointer rounded-full border border-white bg-orange-400 absolute top-4 right-0 text-white -mr-2 z-10"
-            onClick={() => setOpen(!open)}
-          />
-        )} */}
+        onMouseLeave={() => setOpen(false)}
+      >
         <div className="mt-4 top-8 flex flex-col gap-4 relative">
           {menus?.map((menu, i) => (
             <div key={i}>
               <Link
                 to={menu?.link}
                 key={i}
-                onClick={menu.name === "Partners" ? handlePartnersClick : null}
+                onClick={() => {
+                  if (menu.name === "Dashboard") toggleHome();
+                  else if (menu.name === "Inventory") toggleMaterialTable();
+                }}
                 className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:text-white hover:bg-gray-800 rounded-md ${
                   menu?.margin ? "mt-4" : ""
                 }`}
-                open={open}>
+                open={open}
+              >
                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
                 <h2 className={`whitespace-pre duration-500 ${!open ? "opacity-0 translate-x-28 overflow-hidden" : ""}`}>{menu?.name}</h2>
                 <h2
@@ -78,51 +79,11 @@ const Sidebar = ({ togglePartnersTable }) => {
                     open
                       ? "hidden"
                       : `absolute left-14 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`
-                  }`}>
+                  }`}
+                >
                   {menu?.name}
                 </h2>
               </Link>
-              {/* {menu.name === "Inventory" ? (
-                <div
-                  className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:text-white hover:bg-gray-800 rounded-md cursor-pointer relative`}
-                  onClick={() => setInventoryOpen(!inventoryOpen)}>
-                  <div>{React.createElement(menu.icon, { size: "20" })}</div>
-                  <h2 className={`whitespace-pre duration-500 ${!open ? "opacity-0 translate-x-16" : ""}`}>{menu.name}</h2>
-                  <ChevronDown size={16} className="ml-10 text-gray-400 font-bold" />
-                </div>
-              ) : (
-                <Link
-                  to={menu?.link}
-                  key={i}
-                  onClick={menu.name === "Partners" ? handlePartnersClick : null}
-                  className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:text-white hover:bg-gray-800 rounded-md ${
-                    menu?.margin ? "mt-4" : ""
-                  }`}
-                  open={open}>
-                  <div>{React.createElement(menu?.icon, { size: "20" })}</div>
-                  <h2 className={`whitespace-pre duration-500 ${!open ? "opacity-0 translate-x-28 overflow-hidden" : ""}`}>{menu?.name}</h2>
-                  <h2
-                    className={`${
-                      open
-                        ? "hidden"
-                        : `absolute left-14 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`
-                    }`}>
-                    {menu?.name}
-                  </h2>
-                </Link>
-              )} */}
-              {/* {menu.name === "Inventory" &&
-                inventoryOpen &&
-                menu.items.map((item, index) => (
-                  <Link
-                    to={`/inventory/${item.toLowerCase()}`}
-                    key={index}
-                    className="group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md ml-6 transition duration-500 ease-in-out">
-                    <div></div>
-                    <h2>{item}</h2>
-                  </Link>
-                ))}
-              */}
             </div>
           ))}
         </div>
