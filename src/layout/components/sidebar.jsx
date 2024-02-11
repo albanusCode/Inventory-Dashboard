@@ -16,14 +16,6 @@ import { BsCashCoin } from "react-icons/bs";
 const Sidebar = ({ toggleMaterialTable, toggleHome, isOpen }) => {
   const [open, setOpen] = useState(false);
 
-  // const handleMaterialClick = () => {
-  //   toggleMaterialTable();
-  // };
-  // const handleHomeClick = () => {
-  //   toggleHome();
-  // };
-
-  // const [inventoryOpen, setInventoryOpen] = useState(false);
 
   const menus = [
     { name: "Dashboard", link: "/", icon: MdOutlineDashboard },
@@ -63,10 +55,10 @@ const Sidebar = ({ toggleMaterialTable, toggleHome, isOpen }) => {
               <Link
                 to={menu?.link}
                 key={i}
-                onClick={() => {
-                  if (menu.name === "Dashboard") toggleHome();
-                  else if (menu.name === "Inventory") toggleMaterialTable();
-                }}
+                // onClick={() => {
+                //   if (menu.name === "Dashboard") toggleHome();
+                //   else if (menu.name === "Inventory") toggleMaterialTable();
+                // }}
                 className={`group flex items-center text-sm gap-3.5 font-medium p-2 hover:text-white hover:bg-gray-800 rounded-md ${
                   menu?.margin ? "mt-4" : ""
                 }`}

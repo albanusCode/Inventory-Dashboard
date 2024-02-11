@@ -21,7 +21,7 @@ const index = () => {
   };
 
   return (
-    <div className="h-[100%] overflow-x-hidden mr-4 mt-1">
+    <div className="h-full overflow-x-hidden mr-4 mt-1">
       <h4 className="text-xl lg:text-3xl text-gray-600 font-bold mb-4 shadow-xl w-full p-2 rounded-lg">Dashboard</h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-7">
         {inventoryCards.map((card, idx) => (

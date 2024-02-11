@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
-import Sidebar from '@/layout/components/sidebar';
-import MaterialTable from '@/Tables/inventory/material/MaterialTable';
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import MaterialTable from "@/Tables/inventory/material/MaterialTable";
+import AccessoryTable from "@/Tables/inventory/accessory/AccessoryTable";
 
-const index = () => {
-  const [showMaterialTable, setShowPartnersTable] = useState(false);
-
-  const toggleMaterialTable = () => {
-    setShowPartnersTable(!showMaterialTable);
-  };
-
+const InventoryTabs = () => {
   return (
-    <div className="flex overflow-hidden">
-      {/* <Sidebar togglePartnersTable={toggleMaterialTable} />
-      <div className="content">
-        {showMaterialTable ? (
-          <div className="flex">
-            <MaterialTable />
-          </div>
-        ) : null}
-      </div> */}
-    </div>
+    <Tabs defaultValue="materials" className="">
+      <TabsList className="grid w-3/5 mx-auto grid-cols-2">
+        <TabsTrigger value="materials">Materials</TabsTrigger>
+        <TabsTrigger value="accessories">Accessories</TabsTrigger>
+      </TabsList>
+      <TabsContent value="materials">
+        <MaterialTable />
+      </TabsContent>
+      <TabsContent value="accessories">
+        <AccessoryTable />
+      </TabsContent>
+    </Tabs>
   );
 };
 
-export default index;
+export default InventoryTabs;
