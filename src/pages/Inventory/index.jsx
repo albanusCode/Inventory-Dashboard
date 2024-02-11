@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '@/layout/components/sidebar';
-import MaterialTable from '@/Tables/material/MaterialTable';
+import MaterialTable from '@/Tables/inventory/material/MaterialTable';
 
 const index = () => {
   const [showMaterialTable, setShowPartnersTable] = useState(false);

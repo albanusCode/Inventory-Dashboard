@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Navbar from './components/navbar';
+import InventoryTabs from '@/Tables/tabletabs/inventoryTabs';
 import index from '@/pages/Home';
 import Sidebar from './components/sidebar';
 import { Outlet } from 'react-router-dom';
 import Container from '@/components/Container';
-import MaterialTable from '@/Tables/material/MaterialTable';
+import MaterialTable from '@/Tables/inventory/material/MaterialTable';
 
 const MainLayout = () => {
-  const [showMaterialTable, setShowMaterialTable] = useState(false);
+  const [showMaterialTable, setShowMaterialTable] = useState(true); // Set initial state to true
   const [showHome, setShowHome] = useState(false);
 
   const toggleMaterialTable = () => {
@@ -25,8 +26,8 @@ const MainLayout = () => {
         <Sidebar toggleMaterialTable={toggleMaterialTable} toggleHome={toggleHome} />
         <div className="content">
           {showMaterialTable ? (
-            <div className="flex">
-              <MaterialTable />
+            <div className="">
+              <InventoryTabs />
             </div>
           ) : null}
           {showHome ? <index /> : null}

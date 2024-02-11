@@ -1,38 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import SearchBar from '@/components/SearchBar';
-import {MaterialData} from './MaterialData'
-import materialsData from '@/data/inventorydata/materials';
+import accessorysData from '@/data/inventorydata/accessory';
 import { FolderCog, ArrowUpDown } from 'lucide-react';
-import { Button } from '../../components/ui/button';
+import { LuChevronsUpDown } from "react-icons/lu";
+import { Button } from '../../../components/ui/button';
 import { 
     DropdownMenu,
     DropdownMenuContent, 
     DropdownMenuItem, 
     DropdownMenuLabel,  
     DropdownMenuTrigger 
-} from '../../components/ui/dropdown-menu';
+} from '../../../components/ui/dropdown-menu';
+import { AccessoryData } from './AccessoryData';
 
-const MaterialTable = () => {
+const AccessoryTable = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredData, setFilteredData] = useState(materialsData);
+  const [filteredData, setFilteredData] = useState(accessorysData);
 
   console.log(filteredData)
 
   useEffect(() => {
-    const updatedData = materialsData.filter((material) => {
-      const matchesSearch = material.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const updatedData = accessorysData.filter((accessory) => {
+      const matchesSearch = accessory.name.toLowerCase().includes(searchTerm.toLowerCase());
 
       return matchesSearch;
     });
 
     setFilteredData(updatedData);
   }, [searchTerm]);
-  const navigate = useNavigate();
-  const materialSelected = (material) => {
-    navigate(`/material/${material.id}`);
-  };
+  // const navigate = useNavigate();
+  // const materialSelected = (material) => {
+  //   navigate(`/material/${material.id}`);
+  // };
   const columns = [
     {
         accessorKey: "name",
@@ -42,8 +43,8 @@ const MaterialTable = () => {
               variant="ghost"
               onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
             >
-              Material
-              <ArrowUpDown className="ml-2 h-4 w-4" />
+              Accessory
+              <LuChevronsUpDown className='ml-2 h-4 w-4'/>
             </Button>
           )
         },
@@ -75,20 +76,20 @@ const MaterialTable = () => {
         return (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 p-2">
-              <FolderCog />
+              <Button variant="ghost" className="h-8 font-bold text-xl p-4">
+              ...
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Select Action</DropdownMenuLabel>
-              <DropdownMenuItem>
+              {/* <DropdownMenuItem>
               <Button onClick={() => navigate(`/material/${row.original.id}`)}>
                 View
               </Button>
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
               <DropdownMenuItem>
-                <Button variant="secondary">
-                    Suspend
+                <Button variant="outline">
+                    Update
                 </Button>
               </DropdownMenuItem>
               <DropdownMenuItem>
@@ -104,23 +105,16 @@ const MaterialTable = () => {
   ];
 
   return (
-    <div className="w-full h-screen z-[-1] md:pl-12 pt-12">
+    <div className="w-full h-screen md:pl-6">
         <div className="pb-4 px-6 rounded-md w-full md:w-[95vw] min-w-screen">
-            <div className="my-6 flex justify-between items-center bg-gray-800 border p-3 rounded-md">
-            <h2 className="flex text-xl font-semibold text-white gap-6">
-                <button className='bg-blue-800 p-2 rounded-md hover:bg-blue-300 cursor-pointer'>Materials</button>
-                <button className='bg-blue-800 p-2 rounded-md hover:bg-blue-300 cursor-pointer'>Accessories</button>
-            </h2>
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            </div>
-            <MaterialData 
+            <AccessoryData 
               data={filteredData} 
               columns={columns} 
-              materialSelected={materialSelected}
             />
         </div>
     </div>
   );
 };
 
-export default MaterialTable;
+export default AccessoryTable;
