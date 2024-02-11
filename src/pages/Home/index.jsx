@@ -164,12 +164,12 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="px-6 pt-6 pb-8 bg-gray-900 rounded-xl">
+        <div className="px-6 pt-6 pb-8 bg-low-white rounded-xl shadow-md">
           <div className="flex flex-wrap -mx-3 -mb-4 justify-between items-center">
             <div className="w-auto px-3 mb-4">
-              <h4 className="text-gray-100 font-bold tracking-wide">PLACED ORDERS</h4>
+              <h4 className="text-gray-600 font-bold tracking-wide">PLACED ORDERS</h4>
             </div>
-            <div className="w-auto px-3 mb-4">
+            <div className="flex gap-6 w-auto px-3 mb-4">
               <div className="relative inline-block bg-gray-600 rounded-xl">
                 <select className="relative py-2 pl-4 pr-8 cursor-pointer bg-transparent text-xs text-gray-400 font-semibold appearance-none outline-none" style={{ zIndex: 1 }} name="" id="">
                   <option value="">Last Month</option>
@@ -179,7 +179,7 @@ const index = () => {
                 </select>
                 <span className="absolute top-1/2 right-0 mr-2 transform -translate-y-1/2" style={{ zIndex: 0 }}>
                   <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.5L5 5.5L9 1.5" stroke="#3D485B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M1 1.5L5 5.5L9 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
                 </span>
               </div>
@@ -190,23 +190,23 @@ const index = () => {
               <thead>
                 <tr className="text-left">
                   <th className="p-0">
-                    <div className="py-3 px-6 rounded-l-xl bg-gray-700">
-                      <span className="text-xs text-gray-300 font-semibold">ORDER</span>
+                    <div className="py-3 px-6 rounded-l-xl bg-gray-100">
+                      <span className="text-xs text-gray-600 font-bold">ORDER</span>
                     </div>
                   </th>
                   <th className="p-0">
-                    <div className="py-3 px-6 bg-gray-700">
-                      <span className="text-xs text-gray-300 font-semibold">STATUS</span>
+                    <div className="py-3 px-6 bg-gray-100">
+                      <span className="text-xs text-gray-600 font-bold">STATUS</span>
                     </div>
                   </th>
                   <th className="p-0">
-                    <div className="py-3 px-6 bg-gray-700">
-                      <span className="text-xs text-gray-300 font-semibold">RESPONSIBLE</span>
+                    <div className="py-3 px-6 bg-gray-100">
+                      <span className="text-xs text-gray-600 font-bold">RESPONSIBLE</span>
                     </div>
                   </th>
                   <th className="p-0">
-                    <div className="py-3 px-5 rounded-r-xl bg-gray-700">
-                      <span className="text-xs text-gray-300 font-semibold">ESTIMATED DATE</span>
+                    <div className="py-3 px-5 rounded-r-xl bg-gray-100">
+                      <span className="text-xs text-gray-600 font-bold">ESTIMATED DATE</span>
                     </div>
                   </th>
                 </tr>
@@ -215,156 +215,156 @@ const index = () => {
                 <tr>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <h5 className="text-sm font-medium text-gray-100">4 College Bags</h5>
+                      <h5 className="text-sm font-medium text-gray-600">4 College Bags</h5>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
                       <div className="flex h-full items-center">
                         <span className="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-                        <span className="text-sm font-medium text-gray-100">Done</span>
+                        <span className="text-sm font-medium text-gray-600">Done</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <div className="flex h-full text-white items-center">
+                      <div className="flex h-full text-gray-600 items-center">
                         <span>Mike</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <span className="text-sm text-gray-100 font-medium">July 06, 2022</span>
+                      <span className="text-sm text-gray-600 font-medium">July 06, 2022</span>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td className="p-0">
-                    <div className="h-16 p-6 rounded-l-xl bg-gray-700">
-                      <h5 className="text-sm font-medium text-gray-100">Leather Laptop Bag</h5>
+                    <div className="h-16 p-6 rounded-l-xl bg-gray-100">
+                      <h5 className="text-sm font-medium text-gray-600">Leather Laptop Bag</h5>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="flex h-16 p-6 items-center bg-gray-700">
+                    <div className="flex h-16 p-6 items-center bg-gray-100">
                       <span className="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-                      <span className="text-sm font-medium text-gray-100">Done</span>
+                      <span className="text-sm font-medium text-gray-600">Done</span>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="h-16 p-6 bg-gray-700">
-                      <div className="flex h-full text-white items-center">
+                    <div className="h-16 p-6 bg-gray-100">
+                      <div className="flex h-full text-gray-600 items-center">
                         <span>Mike</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="h-16 p-6 rounded-r-xl bg-gray-700">
-                      <h5 className="text-sm font-medium text-gray-100">July 06, 2022</h5>
+                    <div className="h-16 p-6 rounded-r-xl bg-gray-100">
+                      <h5 className="text-sm font-medium text-gray-600">July 06, 2022</h5>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <h5 className="text-sm font-medium text-gray-100">6 Kids Sch. Bags</h5>
+                      <h5 className="text-sm font-medium text-gray-600">6 Kids Sch. Bags</h5>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
                       <div className="flex h-full items-center">
                         <span className="inline-block w-2 h-2 mr-1 bg-blue-500 rounded-full"></span>
-                        <span className="text-sm font-medium text-gray-100">In progress</span>
+                        <span className="text-sm font-medium text-gray-600">In progress</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <div className="flex h-full text-white items-center">
+                      <div className="flex h-full text-gray-600 items-center">
                         <span>Mike</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <span className="text-sm text-gray-100 font-medium">July 06, 2022</span>
+                      <span className="text-sm text-gray-600 font-medium">July 06, 2022</span>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td className="p-0">
-                    <div className="h-16 p-6 rounded-l-xl bg-gray-700">
-                      <h5 className="text-sm font-medium text-gray-100">12 Laptop Bags</h5>
+                    <div className="h-16 p-6 rounded-l-xl bg-gray-100">
+                      <h5 className="text-sm font-medium text-gray-600">12 Laptop Bags</h5>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="flex h-16 p-6 items-center bg-gray-700">
+                    <div className="flex h-16 p-6 items-center bg-gray-100">
                       <span className="inline-block w-2 h-2 mr-1 bg-red-500 rounded-full"></span>
-                      <span className="text-sm font-medium text-gray-100">Cancelled</span>
+                      <span className="text-sm font-medium text-gray-600">Cancelled</span>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="h-16 p-6 bg-gray-700">
-                      <div className="flex h-full text-white items-center">
+                    <div className="h-16 p-6 bg-gray-100">
+                      <div className="flex h-full text-gray-600 items-center">
                         <span>Mike</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="h-16 p-6 rounded-r-xl bg-gray-700">
-                      <h5 className="text-sm font-medium text-gray-100">July 06, 2022</h5>
+                    <div className="h-16 p-6 rounded-r-xl bg-gray-100">
+                      <h5 className="text-sm font-medium text-gray-600">July 06, 2022</h5>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <h5 className="text-sm font-medium text-gray-100">100 Queen Bags</h5>
+                      <h5 className="text-sm font-medium text-gray-600">100 Queen Bags</h5>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
                       <div className="flex h-full items-center">
                         <span className="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-                        <span className="text-sm font-medium text-gray-100">Done</span>
+                        <span className="text-sm font-medium text-gray-600">Done</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <div className="flex h-full text-white items-center">
+                      <div className="flex h-full text-gray-600 items-center">
                         <span>Mike</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
                     <div className="h-16 p-6">
-                      <span className="text-sm text-gray-100 font-medium">July 06, 2022</span>
+                      <span className="text-sm text-gray-600 font-medium">July 06, 2022</span>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td className="p-0">
-                    <div className="h-16 p-6 rounded-l-xl bg-gray-700">
-                      <h5 className="text-sm font-medium text-gray-100">2 Toti Bags</h5>
+                    <div className="h-16 p-6 rounded-l-xl bg-gray-100">
+                      <h5 className="text-sm font-medium text-gray-600">2 Toti Bags</h5>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="flex h-16 p-6 items-center bg-gray-700">
+                    <div className="flex h-16 p-6 items-center bg-gray-100">
                       <span className="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-                      <span className="text-sm font-medium text-gray-100">Done</span>
+                      <span className="text-sm font-medium text-gray-600">Done</span>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="h-16 p-6 bg-gray-700">
-                      <div className="flex h-full text-white items-center">
+                    <div className="h-16 p-6 bg-gray-100">
+                      <div className="flex h-full text-gray-600 items-center">
                         <span>Mike</span>
                       </div>
                     </div>
                   </td>
                   <td className="p-0">
-                    <div className="h-16 p-6 rounded-r-xl bg-gray-700">
-                      <h5 className="text-sm font-medium text-gray-100">July 06, 2022</h5>
+                    <div className="h-16 p-6 rounded-r-xl bg-gray-100">
+                      <h5 className="text-sm font-medium text-gray-600">July 06, 2022</h5>
                     </div>
                   </td>
                 </tr>
